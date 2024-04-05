@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.4/dayjs.min.js"></script>
+    <title>Weather Dashboard</title>
+    
+</head>
+<body>
+    <button id="toggle-theme">Toggle Theme</button>
+        <div class="cloud-background">
+            <h1>Weather Dashboard</h1>
+            <form id="city-form">
+                <label for="cityName">City:</label>
+                <input type="text" id="cityName" name="city">
+                <input type="submit" value="Submit">
+            </form>
+            <form id="coords-form">
+                <label for="coords">Use the latitude and Longitude coordinate plane or use the "Use my Current Location" button.</label>
+                <input type="text" id="lat" name="lat" placeholder="Latitude">
+                <input type="text" id="lon" name="lon" placeholder="Longitude">
+                <input type="submit" value="Submit">
+            </form>
+            <button id="current-location-btn">Use My Current Location</button>
+
+        </div>
+        <h3>Enter a city name, use the latitude and longitude coordinate plane, or the Current Location button to get the current weather and 5-day forecast.</h3>
+            
+        <div id="weather-data" >
+        <div class="weather-display" id="current-weather">
+            <h2>Current Weather</h2>
+            <div ">
+                <p>City: <span id="city-name"></span></p>
+                <img id="weather-icon" src="" alt="Weather Icon">
+                <p>Date: <span id="date"></span></p>
+                <p>Weather: <span id="weather"></span></p>
+                <p>Temperature: <span id="temperature"></span>°C</p>
+                <p>Min Temperature: <span id="temp-min"></span>°C</p>
+                <p>Max Temperature: <span id="temp-max"></span>°C</p>
+                <p>Humidity: <span id="humidity"></span>%</p>
+                <p>Wind Speed: <span id="wind-speed"></span>km/h</p>
+           </div>
+        </div>
+        
+        <div class="weather-display" id="five-day-forecast" class="weather-display">
+            <h2>5-Day Forecast</h2>
+            <div id="forecast-container"></div>
+        </div>
+        <div id="search-history">
+            <h2>Search History</h2>
+            <ul id="history"></ul>
+            <button id="clear-history-btn">Clear History</button>
+        </div>
+        
+        </div>
+    </div>
+    
+    <script src="./assets/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+[data-theme="light"] {
+    --background-element-color: #2b98d39a;
+    --text-color: black;
+    --primary-color: #d5d5d5c0;
+    --background-header: url("./cloud-2.gif");
+    --background-image: url("./ground.gif");
+}
+
+/* Dark mode styles */
+[data-theme="dark"] {
+    --background-element-color: #72437c89;
+    --text-color: #f0f0f0;
+    --primary-color: #886c9495;
+    --background-header: url("./darkmode-1.gif");
+    --background-image: url("./darkmode-2.gif");
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: var(--background-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-weight: bolder;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.cloud-background {
+    background-image: var(--background-header);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.cloud-background form, .cloud-background button {
+    width: auto;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cloud-background form input, .cloud-background form label {
+    margin: 5px 0;
+}
+
+.cloud-background form input, button {
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    padding-left: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.container {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#five-day-forecast, #forecast-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.forecast-container {
+    width: 100vw;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    margin: 10px;
+}
+        
+.forecast-day {
+    display: inline-block;
+    margin: 10px;
+}
+
+.forecast-day img {
+    width: 50px;
+    height: 50px;
+}
+
+.weather-display {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    min-width: 300px;
+    margin: 10px;
+    flex: 0 0 auto;
+}
+
+#weather-data {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    width: 100%;
+    align-items: center;
+}
+
+#five-day-forecast {
+    background-color: var(--background-element-color);
+    border-radius: 10%;
+    align-items: center;
+    justify-content: center;
+}
+
+#five-day-forecast h2 {
+    margin: 10px;
+    background-color: var(--primary-color);
+    border-radius: 10%;
+    padding: 10px;
+    text-align: center;
+}
+
+#current-weather, .forecast-day, #search-history {
+    background-color: var(--primary-color);
+    justify-content: center;
+    align-items: center;text-align: center;
+    border-radius: 25%;
+    padding: 10px;
+    width: 200px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#search-history {
+    margin-top: 20px;
+    padding: 10px;
+    width: auto;
+    height: auto;
+}
+
+#toggle-theme {
+    position:absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 0;
+}
+
+h3 {
+    margin: 10px;
+    background-color: var(--primary-color);
+    border-radius: 10%;
+    padding: 10px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .forecast-day {
+        width: 45%;
+    }
+}
+
+@media (min-width: 600px) {
+    .container {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .forecast-day {
+        width: 90%; 
+    }
+}
