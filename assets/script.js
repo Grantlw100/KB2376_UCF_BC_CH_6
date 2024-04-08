@@ -29,7 +29,7 @@ document.getElementById('current-location-btn').addEventListener('click', functi
                 lon: position.coords.longitude
             };
             console.log(`Latitude: ${coords.lat}, Longitude: ${coords.lon}`);
-            saveSearch(coords); // Save the search with the new structure
+            saveSearch(coords);
             fetchWeatherDataByCoords(coords.lat, coords.lon);
         }, function() {
             alert('Geolocation is not supported by this browser or permission denied.');
@@ -56,7 +56,6 @@ function fetchWeatherData(city) {
 }
 
 function fetchWeatherDataByCoords(lat, lon) {
-    // First, save the search. This assumes saveSearch has been adapted to accept lat and lon.
     const coords = {lat, lon}
 
     fetch(`${apiURLForecast}lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`) // Changed 'imperial' to 'imperial' for Celsius. Use 'imperial' for Fahrenheit.
@@ -67,7 +66,6 @@ function fetchWeatherDataByCoords(lat, lon) {
     .then(data => {
         console.log('Forecast data:', data);
         displayFiveDayForecast(data);
-        // Fetch current weather data
         return fetch(`${apiURLWeather}lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`); // Ensure this fetch is returned to chain the promise
     })
     .then(response => {
@@ -222,7 +220,6 @@ const toggleThemeButton = document.getElementById('toggle-theme');
         const body = document.body;
         const currentTheme = body.getAttribute('data-theme');
         
-        // Toggle theme attribute
         if (currentTheme === 'dark') {
             body.setAttribute('data-theme', 'light');
         } else {
